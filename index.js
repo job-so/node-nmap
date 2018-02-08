@@ -257,7 +257,7 @@ class QueuedScan extends EventEmitter {
     this.singleScanTimeout = 0;
     this.saveNotFoundToResults = false;
 
-    this._queue = new Queue((host) => {
+    this._queue = new Queue(function (host) {
 
       if (args !== null) {
         this.currentScan = new scanClass(host, args);
